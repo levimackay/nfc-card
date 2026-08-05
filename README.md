@@ -20,7 +20,7 @@ nfc-card/
 ├── favicon.svg                    # Browser tab icon (gradient "LM" monogram)
 ├── apple-touch-icon.png           # iOS "Add to Home Screen" icon
 ├── og-image.png                   # Social share preview image (1200×630)
-├── resume.pdf                     # ⚠️ Placeholder — replace with your real resume
+├── resume.pdf                     # Current resume, kept in sync with the portfolio repo
 ├── headshot.jpg                   # Your photo — swap this file to change it
 ├── robots.txt
 ├── sitemap.xml
@@ -33,7 +33,7 @@ nfc-card/
 
 - **Name, taglines, email, links:** edit them directly in `index.html`. Each appears exactly once; searching for the old text finds it.
 - **Contact card:** edit `Levi-Mackay.vcf` (plain text, one field per line — keep the `\r\n` line endings and the `BEGIN:VCARD`/`END:VCARD` wrapper). If you change your email or phone, update it here *and* in `index.html`.
-- **Resume:** replace `resume.pdf` with your real resume, keeping the filename.
+- **Resume:** the source lives in the portfolio repo at `resume/resume.typ`. Rebuild it there, then copy `public/resume.pdf` over this repo's `resume.pdf`, keeping the filename.
 - **Headshot:** replace `headshot.jpg`. If the file is missing or fails to load, the page automatically falls back to the gradient "LM" monogram.
 - **Colors/fonts:** the palette (accent blue → purple gradient, dark background) and font stack live in the `:root` block at the top of `styles.css`. Fonts are the system stack (SF Pro on Apple devices), so there's no webfont download.
 - **SEO/OG tags:** `index.html` has hardcoded title/description/OG/Twitter meta tags. If you change your name or URL, update the matching text there plus `robots.txt` and `sitemap.xml`.

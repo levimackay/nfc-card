@@ -11,7 +11,7 @@ Internal notes for this repo — not shown to site visitors, distinct from READM
 
 ## Known issues / TODOs
 
-- **`resume.pdf` is a placeholder.** README flags this too. Replace with the real resume before relying on this card in the field — right now "Download Resume" serves whatever's checked in.
+- **`resume.pdf` has one upstream: the portfolio repo.** It is built from `resume/resume.typ` in `portfolio-apple-test` and copied here. It drifted three weeks behind once already, so re-copy it whenever the resume changes.
 - **`.gitignore` is a leftover from the old Vite/Node build** (`node_modules`, `dist`, `dist-ssr`, npm/yarn/pnpm log patterns) and no longer applies to anything in this repo. Harmless, but worth trimming down to just editor/OS cruft (`.DS_Store`, `.vscode/*`, `.idea`) next time this file is touched.
 - Personal info duplication risk: name/email/phone/title live in three places that must be kept in sync by hand — `index.html` (visible text + meta tags), `Levi-Mackay.vcf` (contact card), and indirectly `og-image.png` (static image, won't auto-update if the name changes). No single source of truth; a future pass could generate the vcf and OG image from one data file, but for a card this small it's probably not worth the added complexity.
 - No favicon/OG image regeneration tooling — both are hand-authored static files. If the branding (gradient colors, monogram) changes, these need manual re-export.
@@ -27,7 +27,6 @@ Internal notes for this repo — not shown to site visitors, distinct from READM
 
 ## Ideas for next steps
 
-- Swap in the real resume (highest-priority TODO above).
 - Decide on a custom domain (e.g. `card.levimackay.dev`) and follow README section 4 when ready.
 - Consider adding a tiny `.github/workflows` lint/format check (e.g. `htmlhint` or `prettier --check`) if this repo starts seeing more frequent edits — currently skipped as unnecessary overhead for a 3-file static site.
 - If more links get added later (e.g. a second social), keep the "one glance, no scroll" constraint in mind — that's the entire design thesis of this repo versus the full Portfolio site.
