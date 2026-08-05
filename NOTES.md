@@ -6,7 +6,7 @@ Internal notes for this repo — not shown to site visitors, distinct from READM
 
 - Site was rewritten from a React 19 + TypeScript + Vite + SSR-prerender stack to plain static HTML/CSS/JS on 2026-07-19 (see CHANGELOG.md). The old build machinery is gone entirely — no package.json, no node_modules, no bundler. Three files (`index.html`, `styles.css`, `script.js`) plus static assets, deployed as-is.
 - Deploy pipeline: `.github/workflows/deploy.yml` runs on every push to `main`, uploads the repo root via `actions/upload-pages-artifact@v3`, publishes with `actions/deploy-pages@v4`. No build step in CI — whatever's in the root is what ships.
-- Live at https://levibmackay.github.io/nfc-card/. Custom domain not yet connected (README section 4 has the steps whenever that happens — DNS + updating the hardcoded absolute URLs in index.html/robots.txt/sitemap.xml).
+- Live at https://levimackay.github.io/nfc-card/. Custom domain not yet connected (README section 4 has the steps whenever that happens — DNS + updating the hardcoded absolute URLs in index.html/robots.txt/sitemap.xml).
 - This is intentionally a separate repo from `levibmackay/Portfolio`. Don't merge them — the whole point of this one is a near-zero-JS landing spot for the NFC tap; the Portfolio link in the socials row is the escape hatch to the full site.
 
 ## Known issues / TODOs

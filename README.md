@@ -4,7 +4,7 @@ A single-screen, Apple-inspired landing page built for an NFC business card. Som
 
 Plain HTML, CSS, and JavaScript. No framework, no build step, no dependencies. Deploys to GitHub Pages automatically via GitHub Actions on every push to `main`.
 
-This is a **separate, standalone repo** from [`levibmackay/Portfolio`](https://github.com/levibmackay/Portfolio) (your full portfolio site). This one exists purely so an NFC tap has a fast, minimal landing spot — the "Portfolio" link in the socials row points back to your real site.
+This is a **separate, standalone repo** from [`levibmackay/Portfolio`](https://github.com/levimackay/Portfolio) (your full portfolio site). This one exists purely so an NFC tap has a fast, minimal landing spot — the "Portfolio" link in the socials row points back to your real site.
 
 **Why static?** The previous version was React 19 + TypeScript + Vite with an SSR prerender pass. For a one-screen card, all of that machinery bought nothing a phone tapping an NFC tag would notice, except a JS bundle to download, parse, and hydrate. Now the HTML *is* the page: three small files, sub-resource-free above the fold, first paint as soon as the HTML arrives.
 
@@ -57,7 +57,7 @@ One-time setup on GitHub (already done if the site is live):
 Every push to `main` publishes the site. You can also trigger it manually from the **Actions** tab (`workflow_dispatch`). Live at:
 
 ```
-https://levibmackay.github.io/nfc-card/
+https://levimackay.github.io/nfc-card/
 ```
 
 **Base paths:** all asset references in `index.html` are relative (`./styles.css`, `./headshot.jpg`), so the site works from any path — the `/nfc-card/` sub-path today, or a custom domain at `/` later, with no config change.
@@ -66,7 +66,7 @@ https://levibmackay.github.io/nfc-card/
 
 1. Buy/point a domain (or subdomain, e.g. `card.levimackay.dev`) at GitHub Pages:
    - **Apex domain**: add `A` records to GitHub's Pages IPs (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`).
-   - **Subdomain**: add a `CNAME` record pointing to `levibmackay.github.io`.
+   - **Subdomain**: add a `CNAME` record pointing to `levimackay.github.io`.
 2. In **Settings → Pages → Custom domain**, enter your domain and save (GitHub commits a `CNAME` file to Pages for you automatically — you don't need to add one manually).
 3. Update the hardcoded absolute URLs in `index.html` (`canonical`, `og:url`, `og:image`, `twitter:image`), `robots.txt`, and `sitemap.xml` to your new domain. Relative asset paths need no change.
 4. Commit and push — the next Actions run deploys with the new URLs, and GitHub Pages handles HTTPS for your custom domain automatically (may take a few minutes to provision).

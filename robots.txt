@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://levibmackay.github.io/nfc-card/sitemap.xml
+Sitemap: https://levimackay.github.io/nfc-card/sitemap.xml
