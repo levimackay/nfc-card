@@ -4,7 +4,7 @@ A single-screen, Apple-inspired landing page built for an NFC business card. Som
 
 Plain HTML, CSS, and JavaScript. No framework, no build step, no dependencies. Deploys to GitHub Pages automatically via GitHub Actions on every push to `main`.
 
-This is a **separate, standalone repo** from [`levibmackay/Portfolio`](https://github.com/levimackay/Portfolio) (your full portfolio site). This one exists purely so an NFC tap has a fast, minimal landing spot — the "Portfolio" link in the socials row points back to your real site.
+This is a **separate, standalone repo** from [`levimackay/Portfolio`](https://github.com/levimackay/Portfolio) (your full portfolio site). This one exists purely so an NFC tap has a fast, minimal landing spot — the "Portfolio" link in the socials row points back to your real site.
 
 **Why static?** The previous version was React 19 + TypeScript + Vite with an SSR prerender pass. For a one-screen card, all of that machinery bought nothing a phone tapping an NFC tag would notice, except a JS bundle to download, parse, and hydrate. Now the HTML *is* the page: three small files, sub-resource-free above the fold, first paint as soon as the HTML arrives.
 
@@ -27,7 +27,7 @@ nfc-card/
 └── .nojekyll                      # Tells GitHub Pages not to run Jekyll
 ```
 
-**Why it's this small:** your full portfolio already lives at `levibmackay/Portfolio`. This site's only job is to get someone from an NFC tap to the right place in one glance, so there's no Projects/About/Skills scroll — just the hero.
+**Why it's this small:** your full portfolio already lives at `levimackay/Portfolio`. This site's only job is to get someone from an NFC tap to the right place in one glance, so there's no Projects/About/Skills scroll — just the hero.
 
 ## 2. How to update your information
 
@@ -50,7 +50,7 @@ Deployment is wired up via `.github/workflows/deploy.yml` using GitHub's officia
 
 One-time setup on GitHub (already done if the site is live):
 
-1. Push this repo to GitHub as `levibmackay/nfc-card`.
+1. Push this repo to GitHub as `levimackay/nfc-card`.
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment → Source**, choose **GitHub Actions**.
 
@@ -80,5 +80,5 @@ _Last reviewed: 2026-07-20 19:33 MDT_
 
 ---
 
-Maintained by [Levi Mackay](https://github.com/levibmackay)
+Maintained by [Levi Mackay](https://github.com/levimackay)
 
