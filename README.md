@@ -70,13 +70,3 @@ https://levimackay.github.io/nfc-card/
 2. In **Settings → Pages → Custom domain**, enter your domain and save (GitHub commits a `CNAME` file to Pages for you automatically — you don't need to add one manually).
 3. Update the hardcoded absolute URLs in `index.html` (`canonical`, `og:url`, `og:image`, `twitter:image`), `robots.txt`, and `sitemap.xml` to your new domain. Relative asset paths need no change.
 4. Commit and push — the next Actions run deploys with the new URLs, and GitHub Pages handles HTTPS for your custom domain automatically (may take a few minutes to provision).
-
-_Last updated: July 22, 2026_
-
-_Last reviewed: 2026-07-20 19:33 MDT_
-
----
-
----
-
-Maintained by [Levi Mackay](https://github.com/levimackay)
