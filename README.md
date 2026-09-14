@@ -24,6 +24,8 @@ nfc-card/
 ├── headshot.jpg                   # Your photo — swap this file to change it
 ├── robots.txt
 ├── sitemap.xml
+├── CHANGELOG.md                   # Dated log of user-facing changes
+├── NOTES.md                       # Internal maintainer notes, not shown to visitors
 └── .nojekyll                      # Tells GitHub Pages not to run Jekyll
 ```
 
