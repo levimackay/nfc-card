@@ -6,7 +6,7 @@ Plain HTML, CSS, and JavaScript. No framework, no build step, no dependencies. D
 
 This is a **separate, standalone repo** from [`levimackay/Portfolio`](https://github.com/levimackay/Portfolio) (your full portfolio site). This one exists purely so an NFC tap has a fast, minimal landing spot — the "Portfolio" link in the socials row points back to your real site.
 
-**Why static?** The previous version was React 19 + TypeScript + Vite with an SSR prerender pass. For a one-screen card, all of that machinery bought nothing a phone tapping an NFC tag would notice, except a JS bundle to download, parse, and hydrate. Now the HTML *is* the page: three small files, sub-resource-free above the fold, first paint as soon as the HTML arrives.
+**Why static?** The previous version was React 19 + TypeScript + Vite with an SSR prerender pass. For a one-screen card, all of that machinery bought nothing a phone tapping an NFC tag would notice, except a JS bundle to download, parse, and hydrate. Now the HTML *is* the page: three small files and nothing to hydrate.
 
 ## 1. Folder structure
 
@@ -33,9 +33,9 @@ nfc-card/
 
 ## 2. How to update your information
 
-- **Name, taglines, email, links:** edit them directly in `index.html`. Each appears exactly once; searching for the old text finds it.
-- **Contact card:** edit `Levi-Mackay.vcf` (plain text, one field per line — keep the `\r\n` line endings and the `BEGIN:VCARD`/`END:VCARD` wrapper). If you change your email or phone, update it here *and* in `index.html`.
-- **Resume:** the source lives in the portfolio repo at `resume/resume.typ`. Rebuild it there, then copy `public/resume.pdf` over this repo's `resume.pdf`, keeping the filename.
+- **Name, taglines, email, links:** edit them directly in `index.html`. The name appears in the title, meta tags, headline, and headshot alt text, and the email appears in both the `mailto:` link and the copy button's `data-email`, so search for the old text and change every match.
+- **Contact card:** edit `Levi-Mackay.vcf` (plain text, one field per line — keep the `\r\n` line endings and the `BEGIN:VCARD`/`END:VCARD` wrapper). If you change your email, update it here *and* in `index.html`. The phone number lives only in this file.
+- **Resume:** the source is `resume/resume.typ` in the private portfolio source repo (the public `levimackay/Portfolio` only holds the built `resume.pdf`). Rebuild it there, then copy its `public/resume.pdf` over this repo's `resume.pdf`, keeping the filename.
 - **Headshot:** replace `headshot.jpg`. If the file is missing or fails to load, the page automatically falls back to the gradient "LM" monogram.
 - **Colors/fonts:** the palette (accent blue → purple gradient, dark background) and font stack live in the `:root` block at the top of `styles.css`. Fonts are the system stack (SF Pro on Apple devices), so there's no webfont download.
 - **SEO/OG tags:** `index.html` has hardcoded title/description/OG/Twitter meta tags. If you change your name or URL, update the matching text there plus `robots.txt` and `sitemap.xml`.
@@ -69,6 +69,6 @@ https://levimackay.github.io/nfc-card/
 1. Buy/point a domain (or subdomain, e.g. `card.levimackay.dev`) at GitHub Pages:
    - **Apex domain**: add `A` records to GitHub's Pages IPs (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`).
    - **Subdomain**: add a `CNAME` record pointing to `levimackay.github.io`.
-2. In **Settings → Pages → Custom domain**, enter your domain and save (GitHub commits a `CNAME` file to Pages for you automatically — you don't need to add one manually).
+2. In **Settings → Pages → Custom domain**, enter your domain and save (this repo deploys through an Actions workflow, so GitHub creates no `CNAME` file and ignores one if present).
 3. Update the hardcoded absolute URLs in `index.html` (`canonical`, `og:url`, `og:image`, `twitter:image`), `robots.txt`, and `sitemap.xml` to your new domain. Relative asset paths need no change.
 4. Commit and push — the next Actions run deploys with the new URLs, and GitHub Pages handles HTTPS for your custom domain automatically (may take a few minutes to provision).
